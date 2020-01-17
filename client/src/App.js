@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
 import './App.css';
+import AthleteCard from '../src/components/athleteCard';
 
 
-class App extends React.Component{
+class App extends Component{
   constructor() {
     super();
-    state = {
+    this.state = {
       athlete: []
   }
 };
@@ -17,7 +18,7 @@ componentDidMount() {
     .get('http://localhost:5000/api/players')
     .then(res => {
       this.setState ({
-        athlete: res
+        athlete: res.data
       })
       console.log(res, 'this is the athlete data')
     })
@@ -30,6 +31,7 @@ render() {
   console.log(this.state.athlete, `athletes`);
   return (
     <div className="App">
+      <AthleteCard athlete={this.state.athlete}/>
     </div>
   )
 }
