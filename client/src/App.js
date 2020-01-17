@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import './App.css';
 import AthleteCard from '../src/components/athleteCard';
+import Navbar from "./components/Navbar";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
 class App extends Component{
@@ -31,10 +33,17 @@ render() {
   console.log(this.state.athlete, `athletes`);
   return (
     <div className="App">
+      <Navbar />
+      <Switch>
+        <Route>
       <AthleteCard athlete={this.state.athlete}/>
+      </Route>
+      </Switch>
     </div>
   )
 }
 }
 
 export default App;
+
+

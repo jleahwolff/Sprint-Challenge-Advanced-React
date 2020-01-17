@@ -12,8 +12,8 @@ return (
                         display: "flex",
                         justifyContent: "center",
                         backgroundColor: "pink",
-                        margin: '1rem',
-                        textAlign: 'center'
+                        alignItems: 'spaceBetween'
+                        // margin: '1rem'
                     }}>
                     <div key={athlete.id} className="card-info">
                         <h1>Athlete: {athlete.name}</h1>
