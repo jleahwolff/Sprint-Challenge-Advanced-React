@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import ReactDOM from 'react-dom';
 
 
 export const useLocalStorage = (key, initialValue) => {
