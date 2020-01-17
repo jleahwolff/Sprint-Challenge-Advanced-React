@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import ReactDOM from "react-dom";
+import React, { Component } from "react";
 import axios from "axios";
 import './App.css';
 
 
 class App extends React.Component{
-state = {
-  athlete: [],
-  searches: []
+  constructor() {
+    super();
+    state = {
+      athlete: []
+  }
 };
 
 // componentDidMount -- axios call
@@ -17,8 +17,7 @@ componentDidMount() {
     .get('http://localhost:5000/api/players')
     .then(res => {
       this.setState ({
-        athlete: res.data
-        //---------- ADD THE 'SEARCHES' --------------
+        athlete: res
       })
       console.log(res, 'this is the athlete data')
     })
@@ -31,13 +30,9 @@ render() {
   console.log(this.state.athlete, `athletes`);
   return (
     <div className="App">
-
-
     </div>
   )
 }
-
-
 }
 
 export default App;
